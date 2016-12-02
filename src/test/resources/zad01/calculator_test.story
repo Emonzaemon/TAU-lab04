@@ -14,3 +14,5 @@ Then division should return 5
 When set arguments to 3 and 2
 Then great test should return true
 
+When 4 divided by 0
+Then division should thrown an exception

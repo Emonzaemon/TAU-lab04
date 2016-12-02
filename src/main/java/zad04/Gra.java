@@ -4,7 +4,18 @@ import java.util.Random;
 
 public class Gra implements Psikus {
 
+	Integer wynik;
 	
+	public Integer getWynik() {
+		return wynik;
+	}
+
+
+	public void setWynik(Integer wynik) {
+		this.wynik = wynik;
+	}
+
+
 	public Integer cyfrokrad(Integer liczba) {
 		
 		int length = String.valueOf(liczba).length();
@@ -15,6 +26,7 @@ public class Gra implements Psikus {
 		String str = String.valueOf(liczba);
 		str = str.substring(0, i) + str.substring(i + 1);
 		liczba = Integer.parseInt(str);
+		wynik = liczba;
 		return liczba;
 		}
 		else
@@ -39,6 +51,7 @@ public class Gra implements Psikus {
 			strchar[i] = strchar[j];
 			strchar[j] = buffer;
 			liczba = Integer.parseInt(new String(strchar));
+			wynik = liczba;
 			return liczba;
 		}
 		else
@@ -59,11 +72,12 @@ public class Gra implements Psikus {
 		case 3: buff = '8'; break;
 		case 7: buff = '1'; break;
 		case 6: buff = '9'; break;
-		default: return liczba;
+		default: {wynik = liczba; return liczba;}
 		}
 		System.out.print(buff);
 		strchar[i] = buff;
 		liczba = Integer.parseInt(new String(strchar));
+		wynik = liczba;
 		return liczba;
 		
 		

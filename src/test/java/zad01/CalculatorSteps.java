@@ -2,6 +2,8 @@ package zad01;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
@@ -48,7 +50,21 @@ public class CalculatorSteps {
   		assertEquals(result, (boolean) calc.greater());        
     }
     
-
+    @When("$a divided by 0")
+    	public void dividedByZero(int a){
+    	try{
+    		calc.setFirst(a);
+    		calc.setSecond(0);
+    		calc.div();
+    } catch (ArithmeticException e){
+		throwable = e;
+	}
+}
+    
+    @Then("division should thrown an exception")
+    public void exceptionThrown() {
+        assertThat(throwable, instanceOf(ArithmeticException.class));
+    }
 }
 
 

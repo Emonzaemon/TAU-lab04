@@ -12,10 +12,7 @@ public class LiczbaRzymska {
 		this.liczba = liczba;
 	}
 	
-	LiczbaRzymska(){
-		this.setLiczba(3);
-	}
-	
+
 	public static String toString(int liczba){
 		    if (liczba < 1 || liczba > 3999)
 		        return "Invalid Roman Number Value";

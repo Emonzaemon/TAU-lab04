@@ -2,7 +2,6 @@ package zad02;
 
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
